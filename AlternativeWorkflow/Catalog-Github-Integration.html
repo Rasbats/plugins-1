@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Automatic Metadata Git Push :: OpenCPN Developer Manual</title>
+    <link rel="canonical" href="https://leamas.github.io/ocpn-manuals/AlternativeWorkflow/Catalog-Github-Integration.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="navbar-brand">
+      <div class="ocpn-logo"> </div>
+      <a class="navbar-title"
+         href="https://leamas.github.io/ocpn-manuals"
+      >
+        OpenCPN Developer Manual
+        </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/wiki/dokuwiki/doku.php?id&#x3D;opencpn:opencpn_user_manual
+">
+                User Manual
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+              <a class="navbar-item" href="https://rasbats.github.io/opencpn-plugins-manual/">
+                Plugin Manual (WIP)
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="AlternativeWorkflow" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Shipdriver Managed Workflow for OpenCPN plugins</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Using the Shipdriver Managed Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="usage.html">End User Usage</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Alternative-Workflow.html">The Shipdriver Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Metadata-Flow.html">Metadata Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Builders</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Appveyor.html">Appveyor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="CircleCI.html">CircleCI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Github-Actions.html">Github Actions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Drone.html">drone.io</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Cloud-Service-Changes.html">Cloud service changes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Cloudsmith.html">Cloudsmith</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Custom-cloudsmith-repositories.html">Custom Cloudsmith Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Travis.html">Travis</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="GitHub.html">GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Plugin-Adaptation.html">Adapting the plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="CodeChange.html">Code Changes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Local-Build.html">Local Builds</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="Catalog-Github-Integration.html">Automatic Git Push of Metadata</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="Useful-Stuff.html">Useful information</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Shipdriver Managed Workflow for OpenCPN plugins</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/5.3.1/index.html">OpenCPN Developer Manual</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../ocpn-dev-manual/5.3.1/index.html">5.3.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/0.0.1/Home.html">Plugin Installer Documentation</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../plugin-installer/0.0.1/Home.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Shipdriver Managed Workflow for OpenCPN plugins</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../ocpn-dev-manual/5.3.1/intro-AboutThisManual.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Shipdriver Managed Workflow for OpenCPN plugins</a></li>
+    <li><a href="Catalog-Github-Integration.html">Automatic Git Push of Metadata</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Automatic Metadata Git Push</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipdriver-based plugins have experimental support for pushing metadata
+to a remote git repository. The goal is to simplify the process for
+creating pull requests against
+<a href="https://github.com/opencpn/plugins">OpenCPN/plugins</a>.</p>
+</div>
+<div class="paragraph">
+<p>When enabled, all metadata files created when the plugin is built are
+replicated to a fork of OpenCPN/plugins set up by the user. This fork
+can be used to make a PR against OpenCPN/plugins. In particular, there
+is no need to download metadata files from Cloudsmith in order to make a
+PR.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prerequisites:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A plugin. Here, TideFinder is used as example.</p>
+</li>
+<li>
+<p>A fork of
+<a href="https://github.com/OpenCPN/plugins.git">https://github.com/OpenCPN/plugins.git</a>
+on Github.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To enable this support which copies metadata from TideFinder to the
+OpenCPN/plugins fork:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a branch called <em>auto</em> in the OpenCPN/plugins fork:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For builds targeting the <strong>master catalog</strong>: drop possible existing auto
+branch and create a new on top of master:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ git branch -D auto                    # If it exists, ignore possible error messages
+$ git remote update upstream            # Pick up latest version of upstream
+$ git checkout -b auto upstream/master  # Create new branch on top of master:
+$ git push -f origin auto:auto          # push to clone, overwrite old branch.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Builds targeting the <strong>beta catalog</strong> is handled in a similar way:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ git branch -D auto                    # Drop the auto branch completely
+$ git remote update upstream            # Better safe than sorry
+$ git checkout -b auto upstream/Beta    # Create a new auto branch based on Beta
+$ git push -f origin auto:auto          # Unconditionally overwrite the github branch</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Run the script <em>ci/new-credentials</em> in the TideFinder repo. The script
+will ask for the ssh url to your plugins fork repo and a secret
+password. The ssh url can be found in the Github UI:</p>
+<div class="paragraph">
+<p><span class="image"><img src="_images/github/1.plugins.jpg" alt="1.plugins.jpg"></span></p>
+</div>
+</li>
+<li>
+<p>Dont forget the password&#8230;&#8203;</p>
+</li>
+<li>
+<p>The script will create an encrypted private + a public key in the
+TideFinder <em>ci</em> directory. Commit and push these to Github:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ git add ci/*.enc ci/*.pub
+$ git commit -m "Add git deployment key."
+$ git push origin master:master</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Register the new public key (displayed by new-credentials) as a
+deployment key with write permissions (Allow write access) on your
+github OpenCPN/plugins fork repo (in Settings | Deploy keys):</p>
+<div class="paragraph">
+<p><span class="image"><img src="_images/github/10.deploy.key.jpg" alt="10.deploy.key.jpg"></span></p>
+</div>
+<div class="paragraph">
+<p>After adding the key things should look like:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/github/9.deploy.key.jpg" alt="9.deploy.key.jpg"></span></p>
+</div>
+</li>
+<li>
+<p>Set environment variables in all builders like Circleci, drone.io and
+Appveyor:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>GIT_KEY_PASSWORD: Password entered to new-credentials.</p>
+</li>
+<li>
+<p>GIT_REPO: The ssh-based url to your OpenCPN/plugins clone, the same as
+entered to new-credentials.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_during_the_build"><a class="anchor" href="#_during_the_build"></a>During the build</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When the builders are run, the git-push part will</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make a clone of the OpenCPN/plugins fork repository</p>
+</li>
+<li>
+<p>Add the new metadata file.</p>
+</li>
+<li>
+<p>Commit and push the change to the auto branch in the OpenCPN/plugins
+fork</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As mentioned, the changes are pushed to the 'auto' branch by default.
+The branch name can be tweaked using the GIT_BRANCH environment variable
+in the builder.</p>
+</div>
+<div class="paragraph">
+<p>If GIT_KEY_PASSWORD or GIT_REPO is missing git-push will not do anything
+besides some logging.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_the_pull_request_pr_to_opencpnplugins"><a class="anchor" href="#_making_the_pull_request_pr_to_opencpnplugins"></a>Making the Pull Request (PR) to OpenCPN/plugins</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The builders have made commits in the OpenCPN/plugins fork&#8217;s auto
+branch, one for each build. These commits are the metadata files which
+work with the plugin installer of the main OpenCPN program. In beta and
+production mode they become part of the beta and master catalogs of
+plugins in OpenCPN.</p>
+</div>
+<div class="sect2">
+<h3 id="_syncing_master_branch"><a class="anchor" href="#_syncing_master_branch"></a>Syncing master branch</h3>
+<div class="paragraph">
+<p>Before making the pull request to OpenCPN/plugins make sure your fork of
+this is up to date, and that the remote <em>upstream</em> exists.
+<a href="https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/">This
+guide</a> has been found useful. Or on the CLI (creating the upstream
+remote, the first line, is only required the first time):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git remote add upstream https://github.com/OpenCPN/plugins.git
+$ git remote update upstream
+$ git checkout master
+$ git rebase upstream/master</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_master_catalog"><a class="anchor" href="#_master_catalog"></a>Master catalog</h3>
+<div class="paragraph">
+<p>Adding metadata files from the OpenCPN/plugins fork auto branch to the
+master branch goes like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git checkout auto
+$ git rebase master
+$ git checkout master
+$ git merge --squash auto
+$ git commit
+$ git push</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rebase operation should not be strictly necessary, but will pick up
+possible errors if the metadata has been changed by other means. The
+--squash option lumps the too many commits in the auto branch (one for
+each build) to a single one, keeping the master branch tidy.</p>
+</div>
+<div class="paragraph">
+<p>A PR (pull request) can then be made from the master branch for updating
+the master catalog of OpenCPN/plugins.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_beta_catalog"><a class="anchor" href="#_beta_catalog"></a>Beta catalog</h3>
+<div class="paragraph">
+<p>If you configured for Beta metadata files you need:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git checkout auto
+$ git rebase Beta
+$ git checkout Beta
+$ git merge --squash auto
+$ git commit
+$ git push</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The new TideFinder metadata files have been added to your
+OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
+the Beta catalog of OpenCPN/plugins.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_security"><a class="anchor" href="#_security"></a>Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The private ssh key created by new-credentials is encrypted using a
+standard DES alghorithm. There is probably some room to crack this given
+the fact that part of ciphertext is known. The encryption would be
+stronger if the header and trailer of the key wasn&#8217;t encrypted.</p>
+</div>
+<div class="paragraph">
+<p>That said, given the context this should be reasonably safe. At least, a
+separate ssh key is used for this purpose, a key which could be easily
+revoked.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bugs"><a class="anchor" href="#_bugs"></a>Bugs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Probably plenty.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
