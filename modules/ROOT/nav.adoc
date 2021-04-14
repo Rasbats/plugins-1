@@ -1,0 +1,16 @@
+* Developer Manual
++
+--
+include::partial$nav-dev.adoc[]
+--
+* Plugins
++
+--
+include::partial$nav-plugins.adoc[]
+--
+* Beta Plugins
++
+--
+include::partial$nav-betaplugins.adoc[]
+--
+*

@@ -69,8 +69,13 @@ content:
       edit_url: true
 
     - url: https://github.com/Rasbats/opencpn-plugins-manual.git
-      branches: master
+      branches: main
       start_path: manual
+      edit_url: true
+
+    - url: https://github.com/Rasbats/opencpn-plugins-manual.git
+      branches: main
+      start_path: manual-beta
       edit_url: true
 
     - url: ./
