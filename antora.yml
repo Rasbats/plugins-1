@@ -1,0 +1,6 @@
+name: ocpn-manuals
+title: OpenCPN Manuals
+version: '5.3.1'
+nav:
+  - ocpn-dev-manual:ROOT/nav.adoc
+  - opencpn-master-plugins:ROOT/nav.adoc

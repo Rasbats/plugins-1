@@ -1,0 +1,99 @@
+site:
+  title: OpenCPN Developer Manual
+  url: https://leamas.github.io/ocpn-manuals/
+  start_page:  ocpn-manuals::overview.adoc
+
+content:
+  sources:
+    - url: https://github.com/rgleason/ocpn-dev-manual
+      branches: main
+      edit_url: true
+
+    - url: https://github.com/leamas/ocpn-pi-docs.git
+      branches: main
+      edit_url: false
+
+    - url: https://github.com/Rasbats/managed_plugins.git
+      branches: asciidoc
+      edit_url: false
+      start_path: manual
+
+    - url: https://github.com/Rasbats/shipdriver_pi.git
+      branches: master
+      start_path: manual/shipdriver
+      edit_url: true
+
+    - url: https://github.com/Rasbats/otcurrent_pi.git
+      branches: master
+      start_path: manual/otcurrent
+      edit_url: true
+
+    - url: https://github.com/Rasbats/photolayer_pi.git
+      branches: master
+      start_path: manual/photolayer
+      edit_url: true
+
+    - url: https://github.com/Rasbats/DR_pi.git
+      branches: master
+      start_path: manual/dead_reckoning
+      edit_url: true
+
+    - url: https://github.com/rgleason/watchdog_pi
+      branches: master
+      start_path: manual/watchdog
+      edit_url: true
+
+    - url: https://github.com/jongough/ocpn_draw_pi.git
+      branches: master
+      start_path: manual/odraw
+      edit_url: true
+
+    - url: https://github.com/opencpn-radar-pi/radar_pi.git
+      branches: master
+      start_path: manual/radar
+      edit_url: true
+
+    - url: https://github.com/rgleason/dashboard_tactics_pi.git
+      branches: mnt151-frontend2
+      start_path: manual/dash-t
+      edit_url: true
+
+    - url: https://github.com/Rasbats/vfkaps_pi.git
+      branches: master
+      start_path: manual/vfkaps
+      edit_url: true
+
+    - url: https://github.com/Rasbats/sar_pi.git
+      branches: master
+      start_path: manual/sar
+      edit_url: true
+
+    - url: https://github.com/Rasbats/opencpn-plugins-manual.git
+      branches: master
+      start_path: manual
+      edit_url: true
+ui:
+  bundle:
+    url: ./ui-bundle.zip
+    snapshot: true
+
+output:
+  dir: docs
+  clean: true
+
+runtime:
+  fetch: true
+
+asciidoc:
+  attributes:
+    page-resource_1_title: OpenCPN.org
+    page-resource_1_url: https://www.opencpn.org/
+    page-resource_2_title: User Manual
+    page-resource_2_url: |
+      https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:opencpn_user_manual
+    page-resource_3_title: Github Site
+    page-resource_3_url: https://github.com/opencpn/OpenCPN
+    page-resource_4_title: Bugtracker
+    page-resource_4_url: https://opencpn.org/flyspray/
+    page-resource_5_title: Plugin Manual (WIP)
+    page-resource_5_url: https://rasbats.github.io/opencpn-plugins-manual/
