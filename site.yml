@@ -1,7 +1,7 @@
 site:
-  title: OpenCPN Developer Manual
+  title: OpenCPN Manuals
   url: https://leamas.github.io/ocpn-manuals/
-  start_page:  ocpn-manuals::overview.adoc
+  start_page:  ocpn-manuals::index.adoc
 
 content:
   sources:
@@ -72,6 +72,9 @@ content:
       branches: master
       start_path: manual
       edit_url: true
+
+    - url: ./
+      branches: merge
 ui:
   bundle:
     url: ./ui-bundle.zip
