@@ -21,8 +21,10 @@ content:
       edit_url: false
       start_path: manual
 
-    - url: https://github.com/Rasbats/shipdriver_pi.git
-      branches: master
+    # - url: https://github.com/Rasbats/shipdriver_pi.git
+    #   branches: master
+    - url: https://github.com/leamas/shipdriver_pi.git
+      branches: linktest
       start_path: manual/shipdriver
       edit_url: true
 
@@ -40,6 +42,12 @@ content:
       branches: master
       start_path: manual/dead_reckoning
       edit_url: true
+
+    # - url: https://github.com/rgleason/watchdog_pi
+    #   branches: master
+    #   start_path: manual/watchdog
+    #   edit_url: true
+
 
     - url: https://github.com/rgleason/watchdog_pi
       branches: master
