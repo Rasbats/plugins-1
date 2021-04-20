@@ -5,9 +5,12 @@ site:
 
 content:
   sources:
-    - url: https://github.com/rgleason/ocpn-dev-manual
-      branches: main
+    - url: https://github.com/leamas/ocpn-dev-manual.git
+      branches: linktest
       edit_url: true
+      # - url: https://github.com/rgleason/ocpn-dev-manual
+      #   branches: main
+      #   edit_url: true
 
     - url: https://github.com/leamas/ocpn-pi-docs.git
       branches: main
